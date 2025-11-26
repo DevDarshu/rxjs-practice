@@ -1,0 +1,62 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "role": "user"
+    }
+  ],
+  "products": [
+    {
+      "id": "3",
+      "name": "Keyboard",
+      "price": 45,
+      "category": "Electronics"
+    },
+    {
+      "id": "4",
+      "name": "Monitor",
+      "price": 150,
+      "category": "Electronics"
+    },
+    {
+      "id": "5",
+      "name": "Chair",
+      "price": 200,
+      "category": "Furniture"
+    },
+    {
+      "id": "7a4c",
+      "name": "Car",
+      "price": 1,
+      "category": "vehicle"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": 1,
+      "total": 1024,
+      "status": "shipped"
+    },
+    {
+      "id": "2",
+      "userId": 2,
+      "total": 25,
+      "status": "pending"
+    }
+  ]
+}

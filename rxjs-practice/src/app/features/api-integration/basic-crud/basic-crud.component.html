@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Basic CRUD Operations</h2>
+  <p>Demonstrates basic Observable usage, async pipe, and subscription management.</p>
+
+  <!-- Create Form -->
+  <div class="card">
+    <h3>Add New Product</h3>
+    <div class="form-group">
+      <input [(ngModel)]="newProduct.name" placeholder="Product Name" />
+      <input [(ngModel)]="newProduct.price" type="number" placeholder="Price" />
+      <input [(ngModel)]="newProduct.category" placeholder="Category" />
+      <button (click)="createProduct()">Add Product</button>
+    </div>
+  </div>
+
+  <!-- Edit Form (Conditional) -->
+  <div class="card" *ngIf="editingProduct" style="background-color: #f0f8ff;">
+    <h3>Edit Product</h3>
+    <div class="form-group">
+      <input [(ngModel)]="editingProduct.name" placeholder="Product Name" />
+      <input [(ngModel)]="editingProduct.price" type="number" placeholder="Price" />
+      <input [(ngModel)]="editingProduct.category" placeholder="Category" />
+      <button (click)="updateProduct()">Save</button>
+      <button (click)="cancelEdit()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- List -->
+  <h3>Product List</h3>
+  <div *ngIf="products$ | async as products; else loading">
+    <div *ngFor="let product of products" class="card">
+      <strong>{{ product.name }}</strong> - ${{ product.price }} ({{ product.category }})
+      <div style="margin-top: 5px;">
+        <button (click)="startEdit(product)">Edit</button>
+        <button (click)="deleteProduct(product.id!)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <p>Loading products...</p>
+  </ng-template>
+</div>
